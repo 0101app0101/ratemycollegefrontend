@@ -121,11 +121,11 @@ const Navbar=()=>{
                 <div className="clearfix" />
               </div>
               <div className="utf_right_side">
-                <div className="header_widget"> <a href="#dialog_signin_part" className="button border sign-in popup-with-zoom-anim"><i className="fa fa-sign-in" /> Sign In</a> <a href="dashboard_add_listing.html" className="button border with-icon"><i className="sl sl-icon-user" /> Add Listing</a></div>
+                <div className="header_widget"> <a href="#dialog_signin_part" className="button border sign-in popup-with-zoom-anim"><i className="sl sl-icon-paper-plane" />Add Review</a> <a href="dashboard_add_listing.html" className="button border with-icon"><i className="sl sl-icon-home" />Add College</a></div>
               </div>
               <div id="dialog_signin_part" className="zoom-anim-dialog mfp-hide">
                 <div className="small_dialog_header">
-                  <h3>Sign In</h3>
+                  <h3>Add College</h3>
                 </div>
                 <div className="utf_signin_form style_one">
                   <ul className="utf_tabs_nav">
