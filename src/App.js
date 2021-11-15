@@ -15,7 +15,8 @@ function App() {
  <Clgbanner/>
  <Clgname/>
  <Rating/>
-
+ <Comments/>
+ <Similarclg/>
  </>
   );
 }
