@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
 import Navbar from './components/Navbar';
-import Searchbar from './components/Searchbar';
-import Clgbanner from './components/Clgbanner';
-import Clgname from './components/Clgname';
-import Rating from './components/Rating';
-import Comments from './components/Comments';
-import Similarclg from './components/Similarclg';
+import SearchBar from './components/SearchBar';
+import Colleges from './components/Colleges'
+import States from './components/States'
+import Blogs from './components/Blogs'
+import Newsletter from './components/Newsletter'
+import Footer from './components/Footer'
+import BackToTop from './components/BackToTop'
 
 function App() {
   return (
     <>
- <Navbar/>
- <Clgbanner/>
- <Clgname/>
- <Rating/>
- <Comments/>
- <Similarclg/>
- </>
+    <Navbar/>
+    <SearchBar />
+    <Colleges />
+    <States />
+    <Blogs />
+    <Newsletter />
+    <Footer />
+    <BackToTop />
+    </>
   );
 }
 

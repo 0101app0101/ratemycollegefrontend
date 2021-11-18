@@ -1,4 +1,4 @@
-const CollegeCard = () => {
+const CollegeCard = ({College}) => {
     return(
         <a href="listings_single_page_1.html" className="utf_listing_item-container compact" tabIndex={0}>
         <div className="utf_listing_item"> <img src="images/utf_listing_item-02.jpg" alt="" /> <span className="tag"><i className="im im-icon-Electric-Guitar" /> Events</span>
@@ -6,7 +6,7 @@ const CollegeCard = () => {
             <div className="utf_listing_prige_block">							
               <span className="utf_meta_listing_price"><i className="fa fa-tag" /> $45 - $70</span>							
             </div>
-            <h3>The Lounge &amp; Bar</h3>
+            <h3>{College.name}</h3>
             <span><i className="sl sl-icon-location" /> The Ritz-Carlton, Hong Kong</span>
             <span><i className="sl sl-icon-phone" /> (415) 796-3633</span>												
           </div>
