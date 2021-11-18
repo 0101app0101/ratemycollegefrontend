@@ -54,6 +54,13 @@ opacity:1;
 color:#888;
 opacity:1;
 }
+.u-t--md {
+    font-size: 22px;
+}
+* {
+    font-family: "Poppins",sans-serif;
+    box-sizing: border-box;
+}
 
 input:focus::-webkit-input-placeholder { color:transparent; }
 input:focus:-moz-placeholder { color:transparent; }

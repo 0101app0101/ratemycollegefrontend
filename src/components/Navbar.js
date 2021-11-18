@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const Navbar=()=>{
 
 
@@ -30,8 +32,9 @@ const Navbar=()=>{
                         <li><a href="index_6.html">Home Version 6</a></li>
                         <li><a href="index_7.html">Home Version 7</a></li>
                       </ul>
-                    </li>			  
-                    <li><a href="#">Listings</a>
+                    </li>	
+                    {/* <a className='nav-link'> <Link to='/review'><i className="bi bi-people-fill me-2" />Review</Link></a>		   */}
+                    <li><Link to='/colleges'>All Colleges</Link>
                       <ul>
                         <li><a href="#">List Layout</a>
                           <ul>
@@ -121,7 +124,7 @@ const Navbar=()=>{
                 <div className="clearfix" />
               </div>
               <div className="utf_right_side">
-                <div className="header_widget"> <a href="#dialog_signin_part" className="button border sign-in popup-with-zoom-anim"><i className="sl sl-icon-paper-plane" />Add Review</a> <a href="dashboard_add_listing.html" className="button border with-icon"><i className="sl sl-icon-home" />Add College</a></div>
+                <div className="header_widget"> <Link to='/' className="button border sign-in popup-with-zoom-anim"><i className="sl sl-icon-paper-plane" />Add Review</Link> <Link to='/Addcollege' className="button border with-icon"><i className="sl sl-icon-home" />Add College</Link></div>
               </div>
               <div id="dialog_signin_part" className="zoom-anim-dialog mfp-hide">
                 <div className="small_dialog_header">
