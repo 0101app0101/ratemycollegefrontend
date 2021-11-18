@@ -61,6 +61,25 @@ opacity:1;
     font-family: "Poppins",sans-serif;
     box-sizing: border-box;
 }
+.star-ratings{
+    min-width: 310px;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .star-ratings {
+        min-width: 210px;
+    }
+    .widget-svg{
+
+        width: 30px !important;
+    }
+  }
+
+  body{
+      overflow-x: hidden !important;
+  }
+
 
 input:focus::-webkit-input-placeholder { color:transparent; }
 input:focus:-moz-placeholder { color:transparent; }

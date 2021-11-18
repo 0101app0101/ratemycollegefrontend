@@ -224,6 +224,17 @@ const Addclg =({Id})=>{
             <h3><i className="sl sl-icon-tag" /> Categories &amp; Tags</h3>
           </div>       
           <form>    
+          <div className="row with-forms" style={style}>                 
+            <div className="col-md-6">
+              <div className="u-m-bottom--xs u-t--md">Rate the <span className="u-t--bold u-t--primary">room</span> out of 5 stars</div>
+              <div className="u-t--gray">Keep in mind: size, comfort, natural lighting</div>
+            </div>
+            <div className="col-md-6">
+            
+            <input type="text" name="keywords" id="keywords" placeholder="Enter College Name....." value=""></input>
+        
+            </div>
+          </div>
           <div className="row with-forms" style={style}>
             <div className="col-md-6">
               <div className="u-m-bottom--xs u-t--md">Rate the <span className="u-t--bold u-t--primary">room</span> out of 5 stars</div>
@@ -315,6 +326,7 @@ const Addclg =({Id})=>{
             </div>
           </div>
 
+         
           <div className="row with-forms" style={style}>                 
             <div className="col-md-6">
               <div className="u-m-bottom--xs u-t--md">Rate the <span className="u-t--bold u-t--primary">room</span> out of 5 stars</div>
@@ -322,10 +334,60 @@ const Addclg =({Id})=>{
             </div>
             <div className="col-md-6">
             
-            <input type="text" name="keywords" id="keywords" placeholder="Keywords..." value=""></input>
+            <select name="cars" id="cars">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select>
         
             </div>
           </div>
+          <div className="row with-forms" style={style}>                 
+            <div className="col-md-6">
+              <div className="u-m-bottom--xs u-t--md">Rate the <span className="u-t--bold u-t--primary">room</span> out of 5 stars</div>
+              <div className="u-t--gray">Keep in mind: size, comfort, natural lighting</div>
+            </div>
+            <div className="col-md-6">
+            
+            <select name="cars" id="cars">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select>
+        
+            </div>
+          </div>
+          <div className="row with-forms" style={style}>                 
+            <div className="col-md-6">
+              <div className="u-m-bottom--xs u-t--md">Rate the <span className="u-t--bold u-t--primary">room</span> out of 5 stars</div>
+              <div className="u-t--gray">Keep in mind: size, comfort, natural lighting</div>
+            </div>
+            <div className="col-md-6">
+            
+            <select name="cars" id="cars">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select>
+        
+            </div>
+          </div>
+          {/* <div className="row with-forms" style={style}>                 
+            <div className="col-md-6">
+              <div className="u-m-bottom--xs u-t--md">Rate the <span className="u-t--bold u-t--primary">room</span> out of 5 stars</div>
+              <div className="u-t--gray">Keep in mind: size, comfort, natural lighting</div>
+            </div>
+            <div className="col-md-6">
+                
+            
+            <input type="file" name="keywords" id="keywords" placeholder="Keywords..." value="" className="dropzone"></input>
+        
+            </div>
+          </div>
+           */}
           
           <div className="row with-forms" style={style}>
             <div className="col-md-12">

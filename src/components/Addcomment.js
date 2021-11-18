@@ -165,6 +165,52 @@ const Addcomment =({Id})=>{
         
             </div>
           </div>
+          <div className="row with-forms" style={style}>                 
+            <div className="col-md-6">
+              <div className="u-m-bottom--xs u-t--md">Rate the <span className="u-t--bold u-t--primary">room</span> out of 5 stars</div>
+              <div className="u-t--gray">Keep in mind: size, comfort, natural lighting</div>
+            </div>
+            <div className="col-md-6">
+            
+            <select name="cars" id="cars">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select>
+        
+            </div>
+          </div>     <div className="row with-forms" style={style}>                 
+            <div className="col-md-6">
+              <div className="u-m-bottom--xs u-t--md">Rate the <span className="u-t--bold u-t--primary">room</span> out of 5 stars</div>
+              <div className="u-t--gray">Keep in mind: size, comfort, natural lighting</div>
+            </div>
+            <div className="col-md-6">
+            
+            <select name="cars" id="cars">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select>
+        
+            </div>
+          </div>     <div className="row with-forms" style={style}>                 
+            <div className="col-md-6">
+              <div className="u-m-bottom--xs u-t--md">Rate the <span className="u-t--bold u-t--primary">room</span> out of 5 stars</div>
+              <div className="u-t--gray">Keep in mind: size, comfort, natural lighting</div>
+            </div>
+            <div className="col-md-6">
+            
+            <select name="cars" id="cars">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select>
+        
+            </div>
+          </div>
           
           <div className="row with-forms" style={style}>
             <div className="col-md-12">
