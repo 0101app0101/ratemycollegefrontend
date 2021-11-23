@@ -1,27 +1,76 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import StarRatings from 'react-star-ratings';
+import { connect } from "react-redux";
+import { getAllStates } from '../Redux/Actions/action';
+import axios from 'axios';
 
 
-const Addclg =({Id})=>{
+const Addclg =({states,dispatch})=>{
+
+
+  // const [clg,setClg]=useState()
   
+  const addclg=async(e)=>{
+    e.preventDefault()
+setStarState( {name:"",
+state:"",
+year:"",
+city:"",
+course:"",
+suggest:"",
+comment:"",
+  }
+
+)
+   
+console.log(starstate)
+
+   await axios.post("http://localhost:8000/api/colleges/createcollege",JSON.stringify(starstate),{headers: {'Content-Type': 'application/x-www-form-urlencoded' ,}})
+  
+  }
  
-
+  useEffect(()=>{
+    dispatch(getAllStates())
+},[])
 
  
   
 
   
-  const [inputvalue,setInputvalue]=useState('')
+  // const [clgname,setClgname]=useState('')
+  // const [state,setState]=useState('')
+  // const [year,setYear]=useState('')
+  // const [city,setCity]=useState('')
+  // const [course,setCourse]=useState('')
+  // const [suggest,setSuggest]=useState('')
+  // const [comment,setComment]=useState('')
 
   const [starstate, setStarState] = useState({
+    name:"",
+      state:{state:"",code:""},
+      location:{
+        country:"",
+        state:"",
+        city:""
+      },
+      
+      year:"",
+  
+      course:"",
+      suggest:"",
+      comment:"",
+  
 
+stars:{
    param1:0,
    param2:0,
    param3:0,
    param4:0,
    param5:0
+}
     
   })
+  
 
   const changeParam1 = ( newRating, name ) => {
     setStarState({...starstate,
@@ -221,24 +270,24 @@ const Addclg =({Id})=>{
         <div className="container">
         <div className="add_utf_listing_section margin-top-45"> 
           <div className="utf_add_listing_part_headline_part">
-            <h3><i className="sl sl-icon-tag" /> Categories &amp; Tags</h3>
+            <h3><i className="sl sl-icon-tag" /> Add Your College</h3>
           </div>       
           <form>    
           <div className="row with-forms" style={style}>                 
             <div className="col-md-6">
-              <div className="u-m-bottom--xs u-t--md">Rate the <span className="u-t--bold u-t--primary">room</span> out of 5 stars</div>
-              <div className="u-t--gray">Keep in mind: size, comfort, natural lighting</div>
+              <div className="u-m-bottom--xs u-t--md">Enter the <span className="u-t--bold u-t--primary">College</span>  Name</div>
+              <div className="u-t--gray">Keep in mind: this place screwed you real hard!</div>
             </div>
             <div className="col-md-6">
             
-            <input type="text" name="keywords" id="keywords" placeholder="Enter College Name....." value=""></input>
+            <input type="text" name="clgname" id="clgname" onChange={(e)=>setStarState({...starstate,name:e.target.value})} placeholder="Enter College Name....." value={starstate.name}></input>
         
             </div>
           </div>
           <div className="row with-forms" style={style}>
             <div className="col-md-6">
-              <div className="u-m-bottom--xs u-t--md">Rate the <span className="u-t--bold u-t--primary">room</span> out of 5 stars</div>
-              <div className="u-t--gray">Keep in mind: size, comfort, natural lighting</div>
+              <div className="u-m-bottom--xs u-t--md">Rate the <span className="u-t--bold u-t--primary">Infrastructure</span> out of 5 stars</div>
+              <div className="u-t--gray">Keep in mind: facilities, campus area</div>
             </div>
             <div className="col-md-6">              
       
@@ -257,8 +306,8 @@ const Addclg =({Id})=>{
           </div>              
           <div className="row with-forms" style={style}>                 
             <div className="col-md-6">
-              <div className="u-m-bottom--xs u-t--md">Rate the <span className="u-t--bold u-t--primary">room</span> out of 5 stars</div>
-              <div className="u-t--gray">Keep in mind: size, comfort, natural lighting</div>
+              <div className="u-m-bottom--xs u-t--md">Rate the <span className="u-t--bold u-t--primary">Education Quality</span> out of 5 stars</div>
+              <div className="u-t--gray">Keep in mind: Teaching, staff and faculty</div>
             </div>
             <div className="col-md-6">
             <div className="container">
@@ -274,8 +323,8 @@ const Addclg =({Id})=>{
             </div>
           </div><div className="row with-forms" style={style}>                 
             <div className="col-md-6">
-              <div className="u-m-bottom--xs u-t--md">Rate the <span className="u-t--bold u-t--primary">room</span> out of 5 stars</div>
-              <div className="u-t--gray">Keep in mind: size, comfort, natural lighting</div>
+              <div className="u-m-bottom--xs u-t--md">Rate the <span className="u-t--bold u-t--primary">Placement</span> out of 5 stars</div>
+              <div className="u-t--gray">Keep in mind you never got into Google!</div>
             </div>
             <div className="col-md-6">
             <div className="container">
@@ -329,48 +378,66 @@ const Addclg =({Id})=>{
          
           <div className="row with-forms" style={style}>                 
             <div className="col-md-6">
-              <div className="u-m-bottom--xs u-t--md">Rate the <span className="u-t--bold u-t--primary">room</span> out of 5 stars</div>
-              <div className="u-t--gray">Keep in mind: size, comfort, natural lighting</div>
+              <div className="u-m-bottom--xs u-t--md">Select the <span className="u-t--bold u-t--primary">State</span> the college is in</div>
+              <div className="u-t--gray">Keep in mind: its fking required</div>
             </div>
             <div className="col-md-6">
             
-            <select name="cars" id="cars">
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="mercedes">Mercedes</option>
-  <option value="audi">Audi</option>
+            <select name="state" onChange={(e)=>setStarState({...starstate,state:e.target.value})} value={starstate.state} id="state">
+              {states.map((state)=>
+              <option value={state.code}>{state.name}</option>)}
+  
+
 </select>
         
             </div>
           </div>
           <div className="row with-forms" style={style}>                 
             <div className="col-md-6">
-              <div className="u-m-bottom--xs u-t--md">Rate the <span className="u-t--bold u-t--primary">room</span> out of 5 stars</div>
-              <div className="u-t--gray">Keep in mind: size, comfort, natural lighting</div>
+              <div className="u-m-bottom--xs u-t--md">Which  <span className="u-t--bold u-t--primary"> City </span> is your college in</div>
+              <div className="u-t--gray">Keep in mind: its not Gotham City </div>
             </div>
             <div className="col-md-6">
             
-            <select name="cars" id="cars">
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="mercedes">Mercedes</option>
-  <option value="audi">Audi</option>
-</select>
+            <input type="text" name="city" onChange={(e)=>setStarState({...starstate,city:e.target.value})} id="city" placeholder="Enter City Name....." value={starstate.city}></input>
         
             </div>
           </div>
           <div className="row with-forms" style={style}>                 
             <div className="col-md-6">
-              <div className="u-m-bottom--xs u-t--md">Rate the <span className="u-t--bold u-t--primary">room</span> out of 5 stars</div>
-              <div className="u-t--gray">Keep in mind: size, comfort, natural lighting</div>
+              <div className="u-m-bottom--xs u-t--md">What  <span className="u-t--bold u-t--primary">Year</span> did you study here</div>
+              <div className="u-t--gray">Was it worth it ?</div>
             </div>
             <div className="col-md-6">
             
-            <select name="cars" id="cars">
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="mercedes">Mercedes</option>
-  <option value="audi">Audi</option>
+            <input type="number" placeholder="YYYY" value={starstate.year} onChange={(e)=>setStarState({...starstate,year:e.target.value})}min="2000" max="2100"></input>
+
+        
+            </div>
+          </div>
+          <div className="row with-forms" style={style}>                 
+            <div className="col-md-6">
+              <div className="u-m-bottom--xs u-t--md">What  <span className="u-t--bold u-t--primary">Did</span> you study here</div>
+              <div className="u-t--gray"> Keep in mind: its of no use ,your still broke anyways</div>
+            </div>
+            <div className="col-md-6">
+            
+            <input type="text" name="course" id="course" onChange={(e)=>setStarState({...starstate,course:e.target.value})} value={starstate.course} placeholder="Computer Science Engineering..." ></input>
+
+        
+            </div>
+          </div>
+          <div className="row with-forms" style={style}>                 
+            <div className="col-md-6">
+              <div className="u-m-bottom--xs u-t--md">Would <span className="u-t--bold u-t--primary">you</span> recommend it for a friend</div>
+              <div className="u-t--gray">Keep in mind: Education Quality, Infrastructure, Placements,Hot chicks</div>
+            </div>
+            <div className="col-md-6">
+            
+            <select name="answer" onChange={(e)=>setStarState({...starstate,suggest:e.target.value})} value={starstate.suggest}id="answer">
+  <option value="1">yes, a thousand times yes!</option>
+  <option value="0">Fuck no, not in a million years!</option>
+  
 </select>
         
             </div>
@@ -391,10 +458,11 @@ const Addclg =({Id})=>{
           
           <div className="row with-forms" style={style}>
             <div className="col-md-12">
-              <div className="u-m-top--md u-m-bottom--md"><div className="u-m-right--sm u-t--md">Write a <span className="u-t--bold u-t--primary ">comment</span></div><div className="u-t--sm u-m-top--sm">Here's your chance to be specific and let others know what to expect!</div></div>
-              <textarea id="w3review" name="w3review" rows={4} cols={50} defaultValue={"      \n            "} />
+              <div className="u-m-top--md u-m-bottom--md"><div className="u-m-right--sm u-t--md">Write a <span className="u-t--bold u-t--primary ">comment</span></div><div className="u-t--sm u-m-top--sm">Here's your chance to talk shit about your college and let others know what to expect!</div></div>
+              <textarea id="w3review" onChange={(e)=>setStarState({...starstate,comment:e.target.value})} value={starstate.comment} name="w3review" rows={4} cols={50}  />
             </div>				
           </div> 
+          <button className="button border sign-in popup-with-zoom-anim" type="submit" onClick={(e)=>addclg(e)}>Submit</button>
           </form>   
         </div>
       </div>
@@ -404,5 +472,10 @@ const Addclg =({Id})=>{
 
     )
 }
+const mapStateToProps=state=>{
 
-export default Addclg
+
+  return{states:state.stateReducer}
+}
+
+export default  connect(mapStateToProps)(Addclg)

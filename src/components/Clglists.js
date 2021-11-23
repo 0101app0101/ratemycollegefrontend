@@ -1,12 +1,14 @@
-import Signlelistcard from "./Singlelistcard"
+import Signlelistcard from "./cards/Singlelistcard"
 
-const Clglists=()=>{
+const Clglists=({state})=>{
 
 
 
     return(
+      
 
 <>
+
 <div className="container">
         <div className="row">
           <div className="col-md-12">
@@ -61,7 +63,7 @@ const Clglists=()=>{
                 </div>
               </div>
             </div>
-            <Signlelistcard/>
+            <Signlelistcard state={state}/>
             <div className="clearfix" />
             <div className="row">
               <div className="col-md-12">

@@ -12,7 +12,11 @@ import Homescreen from './Screens/Homescreen';
 import Collegelistscreen from'./Screens/Collegelistscreen'
 import Addcommentscreen from './Screens/Addcommentscreen'
 import Addclgscreen from './Screens/Addclgscreen'
+import Statescreen from './Screens/Statescreen';
+
 function App() {
+  
+
   return (
     
 <Router>
@@ -24,6 +28,7 @@ function App() {
           <Route path="/colleges" element={<Collegelistscreen/>}/>
           <Route path="/Addcollege" element={<Addclgscreen/>}/>
           <Route path="/Addcomment" element={<Addcommentscreen/>}/>
+          <Route path="/states/:id" element={<Statescreen/>}/>
           
   
   
