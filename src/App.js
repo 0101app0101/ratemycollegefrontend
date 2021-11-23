@@ -1,5 +1,5 @@
 import Navbar from './components/Navbar';
-import SearchBar from './components/Searchbar';
+import SearchBar from './components/SearchBar';
 import Colleges from './components/Colleges'
 import States from './components/States'
 import Blogs from './components/Blogs'
